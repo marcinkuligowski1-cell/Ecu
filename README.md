@@ -31,3 +31,7 @@ A [standalone inspector](src/calibration_inspector.py) can recognize generic lau
 ## C167 memory paging
 
 Added a [read-only DPP research module](src/dpp_audit.py) and [paging explanation](docs/PAGING_RESEARCH.md). These contain no firmware and do not produce a flashable image. All tests use artificial data.
+
+## Read-only EGR map family research
+
+The [EGR candidate inspector](src/egr_inspector.py) distinguishes possible fresh-air-request tables from similarly shaped N75 maps and checks 20-point curves. Tests use synthetic byte arrays only. See [EGR research limits](docs/EGR_RESEARCH.md).
