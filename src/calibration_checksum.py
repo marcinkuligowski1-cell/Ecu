@@ -37,26 +37,8 @@ def _rol16(value: int, shift: int) -> int:
 
 
 def calculate_correction(data: bytes) -> int:
-    """Calculate two-word Bosch correction from a 4-byte-aligned byte stream."""
-    if len(data) == 0 or len(data) % 4:
-        raise ValueError("checksum input must be nonempty and 4-byte aligned")
-    lo, hi = SEED_LOW, SEED_HIGH
-    for at in range(0, len(data), 4):
-        lo ^= _word(data, at)
-        shift = hi & 15
-        lo = _rol16(lo, shift)
-        carry = int(shift != 0 and (lo & 1) != 0)
-        hi = (hi - _word(data, at+2) - carry) & _MASK
-        hi ^= lo
-        if at+4 == len(data):
-            break
-        # Native checksum loop performs the second pair in each 8-byte cycle.
-        # The final 4-byte pair is handled by the first-half branch above.
-        nxt = at+4
-        lo = (lo - _word(data, nxt) - 1 + 0xDAAD) & _MASK
-        hi ^= _word(data, nxt+2)
-        hi = _ror16(hi, lo & 15)
-    return (((hi ^ 0xDF9B) & _MASK) << 16) | ((lo - 0xAB85) & _MASK)
+    """Return correction using the CPU-equivalent two-pair rotation loop."""
+    return _calc(data)
 
 
 def _calc(data: bytes) -> int:
