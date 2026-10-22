@@ -7,6 +7,8 @@ ALLOWED = {
     "README.md", "SECURITY.md", ".gitignore", ".github/workflows/tests.yml",
     "docs/PROGRESS.md", "docs/SAFETY_CASE.md", "src/selector.py",
     "tests/test_selector.py", "tests/test_public_guard.py",
+    "src/calibration_inspector.py", "tests/test_calibration_inspector.py",
+    "docs/CALIBRATION_RESEARCH.md",
     "tools/check_public_tree.py",
 }
 DENIED_EXTENSIONS = {".bin", ".eep", ".eeprom", ".hex", ".rom", ".romdata",
