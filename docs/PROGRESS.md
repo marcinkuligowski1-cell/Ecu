@@ -88,3 +88,11 @@ Do not publish private calibrations, original ECU images, vehicle identifiers, i
 - ZedSuite remains useful for map comparisons, but its published roadmap explicitly excludes an automatic multimap switcher.
 - Prepared a **private, non-flashable** builder-input package from privately held images, with one calibration variant returned to a neutral LC axis. The inputs retain existing checksums unchanged, so do NOT flash them and do NOT publish them.
 - No third-party generator has been executed and no flashable output has been produced. Before using a vendor-generated output, independent firmware/boot safety checks and ECU-recovery capability remain required because only one ECU is available.
+
+## 2026-10-22 — static review of third-party Android EDC15 multimap APK
+
+- Inspected the user-provided KKL Kombajn Android APK **privately**, without network activation or modifications to the third-party application.
+- Confirmed that it contains a .NET EDC15 multimap operation, structured ECU/software profiles, template-bank and hook-location metadata, source/output hash checking, output-image metadata, and at least two pedal/control input modes.
+- The vendor engine's implementation is obfuscated; coverage of the exact user firmware and any offline execution requirements are **not verified**.
+- No license circumvention, key extraction, copied vendor assemblies, templates, executable bytes, private firmware, hashes of the owner's source ECU, or third-party code were published.
+- This is an integration feasibility finding, not a valid or flashable ECU image. Existing firmware checksum and single-ECU recovery safety gates remain open.
