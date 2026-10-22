@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.bin
+*.eep
+*.eeprom
+*.hex
+*.rom
+*.romdata
+*.zip
+*.7z
+*.rar
+*.key
+*.pem
+*.p12
+.env
