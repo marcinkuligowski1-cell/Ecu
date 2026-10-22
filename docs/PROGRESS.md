@@ -38,3 +38,12 @@ Do not publish private calibrations, original ECU images, vehicle identifiers, i
 - Added 15 tests with synthetic data: 50 total offline tests.
 - Checksum reproduction remains unresolved; this repository has no checksum writer or flashable image.
 - Physical pedal variables, code injection and ECU bench tests remain unverified.
+
+## 2026-10-22: DPP architecture and calibration-bank integrity review
+
+- Examined the C167's 16-KiB data page pointer model from the manufacturer manual.
+- Added a read-only DPP address translator, aligned instruction-shape scanner and a check for unreviewed page-pointer modifications.
+- Added 26 synthetic host-only tests (76 total).
+- A separate **private**, read-only review confirmed that a generic third-pointer rewrite would change a memory page unrelated to the intended new calibration selection. Control-flow reachability remains unverified.
+- Private block analysis found repeated checksum-like markers; checksum validation remains unresolved.
+- No original FLASH, EEPROM, private offsets or calibration data was published.
