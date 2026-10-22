@@ -12,6 +12,7 @@ ALLOWED = {
     "src/dpp_audit.py", "tests/test_dpp_audit.py", "docs/PAGING_RESEARCH.md",
     "src/egr_inspector.py", "tests/test_egr_inspector.py", "docs/EGR_RESEARCH.md",
     "src/bank_layout.py", "tests/test_bank_layout.py", "docs/BANK_LAYOUT.md",
+    "src/calibration_checksum.py", "tests/test_calibration_checksum.py", "docs/CHECKSUM_RESEARCH.md",
     "tools/check_public_tree.py",
 }
 DENIED_EXTENSIONS = {".bin", ".eep", ".eeprom", ".hex", ".rom", ".romdata",
