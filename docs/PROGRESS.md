@@ -64,3 +64,10 @@ Do not publish private calibrations, original ECU images, vehicle identifiers, i
 - Added 15 artificial-data unit tests (91 total host-only tests).
 - Classified affected map families privately; no private offsets, table values, ECU BIN files or DTC selections are placed on public GitHub.
 - Meaning and safety of all ECU maps still require reachable C167 execution analysis and bench verification. No road-safe flashable image exists.
+
+## 2026-10-22 — block-aligned three-bank candidate review
+
+- Discovered that previous candidate bank locations did not follow the compact 48-KiB block layout and would overwrite reserved bytes.
+- Prepared a generic offline bank scaffold helper that refuses nonempty destinations and out-of-bank differences, and never modifies original source files.
+- Added twelve synthetic block-layout tests; **103 total public host tests**.
+- The private copy plan respects existing reserved bytes but has unverified per-block checksums and NO executable map switching. **It is not flashable.**
