@@ -39,3 +39,7 @@ The [EGR candidate inspector](src/egr_inspector.py) distinguishes possible fresh
 ## Data-bank layout checker (non-flashable)
 
 An [offline scaffold function](src/bank_layout.py) verifies fill bytes and overlapping blocks before assembling **data only**. All test data is artificial. It does not produce a flash-ready ECU binary. See [bank-layout restrictions](docs/BANK_LAYOUT.md).
+
+## Verified compact calibration checksums (offline)
+
+A [read-only validator and explicit correction writer](src/calibration_checksum.py) now supports a narrowly identified compact 48-KiB V4.1 block layout. See [checksum research and limitations](docs/CHECKSUM_RESEARCH.md). Tests operate only on artificial bytes; no real ECU firmware or vehicle diagnostics are stored here. There is still no runnable C167 profile-switch hook.
