@@ -35,3 +35,7 @@ Added a [read-only DPP research module](src/dpp_audit.py) and [paging explanatio
 ## Read-only EGR map family research
 
 The [EGR candidate inspector](src/egr_inspector.py) distinguishes possible fresh-air-request tables from similarly shaped N75 maps and checks 20-point curves. Tests use synthetic byte arrays only. See [EGR research limits](docs/EGR_RESEARCH.md).
+
+## Data-bank layout checker (non-flashable)
+
+An [offline scaffold function](src/bank_layout.py) verifies fill bytes and overlapping blocks before assembling **data only**. All test data is artificial. It does not produce a flash-ready ECU binary. See [bank-layout restrictions](docs/BANK_LAYOUT.md).
