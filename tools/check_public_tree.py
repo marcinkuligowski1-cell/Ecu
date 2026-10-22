@@ -10,6 +10,7 @@ ALLOWED = {
     "src/calibration_inspector.py", "tests/test_calibration_inspector.py",
     "docs/CALIBRATION_RESEARCH.md",
     "src/dpp_audit.py", "tests/test_dpp_audit.py", "docs/PAGING_RESEARCH.md",
+    "src/egr_inspector.py", "tests/test_egr_inspector.py", "docs/EGR_RESEARCH.md",
     "tools/check_public_tree.py",
 }
 DENIED_EXTENSIONS = {".bin", ".eep", ".eeprom", ".hex", ".rom", ".romdata",
