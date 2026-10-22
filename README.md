@@ -27,3 +27,7 @@ GitHub Actions repeats both checks for commits and pull requests.
 ## Read-only calibration research
 
 A [standalone inspector](src/calibration_inspector.py) can recognize generic launch-control axis structures in offline byte streams and detect occupied candidate bank regions. It never rewrites firmware. Tests are synthetic. See [calibration research](docs/CALIBRATION_RESEARCH.md).
+
+## C167 memory paging
+
+Added a [read-only DPP research module](src/dpp_audit.py) and [paging explanation](docs/PAGING_RESEARCH.md). These contain no firmware and do not produce a flashable image. All tests use artificial data.
