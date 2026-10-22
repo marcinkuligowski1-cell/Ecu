@@ -9,6 +9,7 @@ ALLOWED = {
     "tests/test_selector.py", "tests/test_public_guard.py",
     "src/calibration_inspector.py", "tests/test_calibration_inspector.py",
     "docs/CALIBRATION_RESEARCH.md",
+    "src/dpp_audit.py", "tests/test_dpp_audit.py", "docs/PAGING_RESEARCH.md",
     "tools/check_public_tree.py",
 }
 DENIED_EXTENSIONS = {".bin", ".eep", ".eeprom", ".hex", ".rom", ".romdata",
