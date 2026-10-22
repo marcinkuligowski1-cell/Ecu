@@ -56,3 +56,11 @@ Do not publish private calibrations, original ECU images, vehicle identifiers, i
 - Original per-path status words must be treated as version-specific. A generic tool's “re-enable” operation may not reproduce the exact original record; do not attempt restoration without private byte-for-byte verification.
 - Safety-critical boost deviation diagnostics require explicit review before any candidate firmware is produced; switching calibration profiles must not silently alter global diagnostic behavior.
 - Public repository still contains no original images, diagnostic codes associated with the owner's ECU, unique offsets, or private calibration data.
+
+## 2026-10-22 — EGR vs N75 calibration classification
+
+- Added a read-only 16×13 map scanner distinguishing likely EGR fresh-air requests from similarly shaped N75 duty tables.
+- Added recognition of possible EGR hysteresis 20×1 curves, and independent difference counts for calibration data versus diagnostic-path records.
+- Added 15 artificial-data unit tests (91 total host-only tests).
+- Classified affected map families privately; no private offsets, table values, ECU BIN files or DTC selections are placed on public GitHub.
+- Meaning and safety of all ECU maps still require reachable C167 execution analysis and bench verification. No road-safe flashable image exists.
