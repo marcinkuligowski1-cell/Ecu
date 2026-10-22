@@ -23,3 +23,7 @@ python tools/check_public_tree.py
 ```
 
 GitHub Actions repeats both checks for commits and pull requests.
+
+## Read-only calibration research
+
+A [standalone inspector](src/calibration_inspector.py) can recognize generic launch-control axis structures in offline byte streams and detect occupied candidate bank regions. It never rewrites firmware. Tests are synthetic. See [calibration research](docs/CALIBRATION_RESEARCH.md).
