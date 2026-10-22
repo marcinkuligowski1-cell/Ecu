@@ -96,3 +96,12 @@ Do not publish private calibrations, original ECU images, vehicle identifiers, i
 - The vendor engine's implementation is obfuscated; coverage of the exact user firmware and any offline execution requirements are **not verified**.
 - No license circumvention, key extraction, copied vendor assemblies, templates, executable bytes, private firmware, hashes of the owner's source ECU, or third-party code were published.
 - This is an integration feasibility finding, not a valid or flashable ECU image. Existing firmware checksum and single-ECU recovery safety gates remain open.
+
+## 2026-10-22 — private audit of a candidate brake/throttle multimap image
+
+- Inspected a separately supplied candidate image **offline** against the earlier stock and tuned images, without uploading source bytes or identifiers.
+- Verified that it includes an additional C167 subroutine, a patched call site and three distinct data page pointer triples selecting three calibration regions.
+- All three calibration banks in the candidate are almost the same tuned configuration; the candidate does **not** implement the desired stock-versus-Stage-1 calibration distinction.
+- The switch routine reads one bit flag and one numeric RAM value, but their physical brake/throttle provenance is not independently established.
+- Trailer fields change, but no independent checksum validation or bench execution has been performed. The candidate is **not cleared for flashing**, especially with only one operational ECU available.
+- All detailed offsets, SHA-256 values and image content remain in the user's private analysis package; no binary content is committed.
