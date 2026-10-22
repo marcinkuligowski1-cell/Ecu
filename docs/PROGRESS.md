@@ -80,3 +80,11 @@ Do not publish private calibrations, original ECU images, vehicle identifiers, i
 - Added a public implementation with **12 synthetic tests** (115 total public host-only tests).
 - Found a BOOT metadata table pointing into a separate boot-service region; most previously reported DPP0 reset signatures reside there rather than in the main engine application. Runtime reachability remains unverified.
 - Still blocked on a validated executable C167 switching hook, hardware pedal flags and full runtime control-flow integration. **Do not flash the intermediate image.**
+
+## 2026-10-22 — evaluated existing EDC15 multimap generators
+
+- Researched VAG EDC+ (edcpl.us/multimap), which advertises EDC15V/VM profile switching plus code injection and checksum handling. The switcher requires an account and a paid entitlement; compatibility with the exact user's image is not yet verified.
+- Researched Chip & Tune by HB EDC15 Mapswitch, which advertises three banks for distributor-pump and pump-injector EDC15, pedal/CC controls and tachometer feedback. It requires an account, and the vendor requires separate checksum correction.
+- ZedSuite remains useful for map comparisons, but its published roadmap explicitly excludes an automatic multimap switcher.
+- Prepared a **private, non-flashable** builder-input package from privately held images, with one calibration variant returned to a neutral LC axis. The inputs retain existing checksums unchanged, so do NOT flash them and do NOT publish them.
+- No third-party generator has been executed and no flashable output has been produced. Before using a vendor-generated output, independent firmware/boot safety checks and ECU-recovery capability remain required because only one ECU is available.
