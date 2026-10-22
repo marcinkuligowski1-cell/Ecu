@@ -47,3 +47,12 @@ Do not publish private calibrations, original ECU images, vehicle identifiers, i
 - A separate **private**, read-only review confirmed that a generic third-pointer rewrite would change a memory page unrelated to the intended new calibration selection. Control-flow reachability remains unverified.
 - Private block analysis found repeated checksum-like markers; checksum validation remains unresolved.
 - No original FLASH, EEPROM, private offsets or calibration data was published.
+
+## 2026-10-22: diagnostic-path separation (sanitized)
+
+- User confirmed the Stage 1 diagnostic suppressions were also applied with ZedSuite.
+- Privately compared the original and modified images using the compact EDC15 fault-path layout described in ZedSuite's public source.
+- Confirmed three grouped diagnostic-path records with seven modified status triplets. These changes are distinct from the LC activation axis and performance calibration changes.
+- Original per-path status words must be treated as version-specific. A generic tool's “re-enable” operation may not reproduce the exact original record; do not attempt restoration without private byte-for-byte verification.
+- Safety-critical boost deviation diagnostics require explicit review before any candidate firmware is produced; switching calibration profiles must not silently alter global diagnostic behavior.
+- Public repository still contains no original images, diagnostic codes associated with the owner's ECU, unique offsets, or private calibration data.
