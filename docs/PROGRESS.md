@@ -71,3 +71,12 @@ Do not publish private calibrations, original ECU images, vehicle identifiers, i
 - Prepared a generic offline bank scaffold helper that refuses nonempty destinations and out-of-bank differences, and never modifies original source files.
 - Added twelve synthetic block-layout tests; **103 total public host tests**.
 - The private copy plan respects existing reserved bytes but has unverified per-block checksums and NO executable map switching. **It is not flashable.**
+
+## 2026-10-22 — calibration checksum breakthrough
+
+- A Bosch two-word rolling checksum and correction scheme reproduced **both** stored 32-bit checksum fields in each of two separately provided images, checked privately without exporting either.
+- The same algorithm confirmed all six checksum fields of a private 3-bank data-only scaffold.
+- Restored a previously activated LC speed-axis descriptor in a private tuned data copy, preserving all other tuning/DTC bytes and recomputing the affected correction field.
+- Added a public implementation with **12 synthetic tests** (115 total public host-only tests).
+- Found a BOOT metadata table pointing into a separate boot-service region; most previously reported DPP0 reset signatures reside there rather than in the main engine application. Runtime reachability remains unverified.
+- Still blocked on a validated executable C167 switching hook, hardware pedal flags and full runtime control-flow integration. **Do not flash the intermediate image.**
