@@ -105,3 +105,5 @@ Do not publish private calibrations, original ECU images, vehicle identifiers, i
 - The switch routine reads one bit flag and one numeric RAM value, but their physical brake/throttle provenance is not independently established.
 - Trailer fields change, but no independent checksum validation or bench execution has been performed. The candidate is **not cleared for flashing**, especially with only one operational ECU available.
 - All detailed offsets, SHA-256 values and image content remain in the user's private analysis package; no binary content is committed.
+
+- Additional private comparison of the candidate found that the previous launch-control activation appears in all three banks. The impact of retaining LC alongside a pedal-controlled switcher is unverified and must be resolved before hardware use.
