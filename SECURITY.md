@@ -1,5 +1,7 @@
-# Public repository safety
+# Public workspace safety policy
 
-This project is public. Do not commit original or modified ECU firmware, EEPROM dumps, vehicle/owner identifiers, immobilizer data, credentials, keys, private measurements, or proprietary third-party code. Review logs and changes before sharing. The automated guard checks file names only and is not a substitute for manual review.
+This is a **public** repository. Publish only manually reviewed, independently developed demonstration code, synthetic tests and sanitized documentation.
 
-The selector is a host-only simulation. It cannot control a physical engine or CAN bus and cannot produce a flashable binary.
+Do not commit original or modified ECU FLASH or EEPROM, private calibration tables, vehicle identifiers, immobilizer data, diagnostic exports, account credentials, signing keys, proprietary firmware, or copied commercial tools. Do not include them in Issues, Pull Requests, logs or artifacts either.
+
+The publication guard checks file allowlists, basic content markers, text format and size. It cannot prove absence of confidential material. Manually inspect every change before publishing. Deleting an exposed secret in a subsequent commit does not remove it from Git history.
