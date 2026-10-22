@@ -30,3 +30,11 @@
 | Flashable three-map firmware | **Not available** |
 
 Do not publish private calibrations, original ECU images, vehicle identifiers, immobilizer data, or diagnostic logs.
+
+## 2026-10-22: calibration signature audit
+
+- Verified the public ZedSuite LC axis description against private firmware, without uploading any private material.
+- Added a read-only signature inspector and bank-collision checks.
+- Added 15 tests with synthetic data: 50 total offline tests.
+- Checksum reproduction remains unresolved; this repository has no checksum writer or flashable image.
+- Physical pedal variables, code injection and ECU bench tests remain unverified.
